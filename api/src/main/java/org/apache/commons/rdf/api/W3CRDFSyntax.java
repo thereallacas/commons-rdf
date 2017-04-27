@@ -45,8 +45,8 @@ class W3CRDFSyntax implements RDFSyntax {
      * IRI representing a <a href="https://www.w3.org/ns/formats/">W3C RDF
      * format</a>.
      */
-    private final static class FormatIRI implements IRI {
-        private static String BASE = "http://www.w3.org/ns/formats/";
+    private static final class FormatIRI implements IRI {
+        private static final String BASE = "http://www.w3.org/ns/formats/";
         private final String format;
     
         private FormatIRI(final String format) {
@@ -151,7 +151,7 @@ class W3CRDFSyntax implements RDFSyntax {
      * 
      */
     @Override
-    public String mediaType() {
+    public String getmediaType() {
         return mediaType;
     }
 
@@ -163,7 +163,7 @@ class W3CRDFSyntax implements RDFSyntax {
      * 
      */
     @Override
-    public String fileExtension() {
+    public String getfileExtension() {
         return fileExtension;
     }
 
@@ -173,17 +173,17 @@ class W3CRDFSyntax implements RDFSyntax {
     }
 
     @Override
-    public String title() {
+    public String gettitle() {
         return title;
     }
 
     @Override
-    public String name() {
+    public String getname() {
         return name;
     }
     
     @Override
-    public IRI iri() {
+    public IRI getiri() {
         return iri;
     }
 
@@ -196,7 +196,7 @@ class W3CRDFSyntax implements RDFSyntax {
             return false;
         }
         RDFSyntax other = (RDFSyntax) obj;
-        return mediaType.equalsIgnoreCase(other.mediaType());
+        return mediaType.equalsIgnoreCase(other.getmediaType());
     }
 
     @Override
