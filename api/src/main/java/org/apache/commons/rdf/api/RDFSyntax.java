@@ -129,7 +129,7 @@ public interface RDFSyntax {
     public String getmediaType();
 
     /**
-     * Set of <a href="https://tools.ietf.org/html/rfc2046">IANA media types/a> that
+     * Set of <a href="https://tools.ietf.org/html/rfc2046">IANA media types</a> that
      * covers this RDF syntax, including any non-official media types. 
      * <p>
      * The media type can be used as part of <code>Content-Type</code> and
@@ -236,7 +236,7 @@ public interface RDFSyntax {
      * <p>
      * The <code>mediaType</code> is compared in lower case to all media types
      * supported, therefore it might not be equal to the
-     * {@link RDFSyntax#mediaType} of the returned RDFSyntax.
+     * {@link RDFSyntax#getmediaType()} of the returned RDFSyntax.
      * <p>
      * If the media type specifies parameters, e.g.
      * <code>text/turtle; charset=ascii</code>, only the part of the string to
@@ -262,7 +262,7 @@ public interface RDFSyntax {
      * <p>
      * The <code>fileExtension</code> is compared in lower case to all
      * extensions supported, therefore it might not be equal to the
-     * {@link RDFSyntax#fileExtension} of the returned RDFSyntax.
+     * {@link RDFSyntax#getfileExtension()} of the returned RDFSyntax.
      * <p>
      * This method support all syntaxes returned by {@link #w3cSyntaxes()}.
      * 
