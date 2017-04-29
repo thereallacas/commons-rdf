@@ -244,7 +244,6 @@ public final class JenaRDF implements RDF {
      *            The Jena Node to adapt. It's {@link Node#isConcrete()} must be
      *            <code>true</code>.
      * @return Adapted {@link JenaRDFTerm}
-     * @
      *             If the {@link Node} can't be represented as an
      *             {@link RDFTerm}, e.g. if the node is not concrete or
      *             represents a variable in Jena.
@@ -269,7 +268,6 @@ public final class JenaRDF implements RDF {
      *            The Jena Node to adapt. It's {@link Node#isConcrete()} must be
      *            <code>true</code>.
      * @return Adapted {@link RDFTerm}
-     * @
      *             If the {@link Node} can't be represented as an
      *             {@link RDFTerm}, e.g. if the node is not concrete or
      *             represents a variable in Jena.
@@ -316,7 +314,6 @@ public final class JenaRDF implements RDF {
      * @param triple
      *            Jena {@link org.apache.jena.graph.Triple} to adapt
      * @return Adapted {@link JenaTriple}
-     * @
      *             if any of the triple's nodes are not concrete or the triple
      *             is a generalized triple
      */
@@ -345,7 +342,6 @@ public final class JenaRDF implements RDF {
      * @return Adapted {@link TripleLike}. Note that the generalized triple does
      *         <strong>not</strong> implement {@link Triple#equals(Object)} or
      *         {@link Triple#hashCode()}.
-     * @
      *             if any of the triple's nodes are not concrete
      */
     public JenaTripleLike asGeneralizedTriple(final org.apache.jena.graph.Triple triple) {
@@ -378,7 +374,6 @@ public final class JenaRDF implements RDF {
      * @return Adapted {@link QuadLike}. Note that the generalized quad does
      *         <strong>not</strong> implement {@link Quad#equals(Object)} or
      *         {@link Quad#hashCode()}.
-     * @
      *             if any of the quad nodes are not concrete
      */
     public JenaQuadLike<RDFTerm> asGeneralizedQuad(final org.apache.jena.sparql.core.Quad quad) {
@@ -402,7 +397,6 @@ public final class JenaRDF implements RDF {
      * @param triple
      *            Jena triple
      * @return Converted triple
-     * @
      *             if any of the triple's nodes are not concrete or the triple
      *             is a generalized triple
      */
@@ -552,7 +546,6 @@ public final class JenaRDF implements RDF {
      * @param quad
      *            Jena {@link org.apache.jena.sparql.core.Quad} to adapt
      * @return Converted {@link Quad}
-     * @
      *             if any of the quad's nodes are not concrete or the quad is a
      *             generalized quad
      */
