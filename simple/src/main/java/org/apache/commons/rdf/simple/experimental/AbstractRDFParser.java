@@ -89,7 +89,7 @@ public abstract class AbstractRDFParser<T extends AbstractRDFParser<T>> implemen
 	 * Get the set content-type {@link RDFSyntax}, if any.
 	 * <p>
 	 * If this is {@link Optional#isPresent()}, then {@link #getContentType()}
-	 * contains the value of {@link RDFSyntax#mediaType}.
+	 * contains the value of {@link RDFSyntax#getmediaType()}.
 	 * 
 	 * @return The {@link RDFSyntax} of the content type, or
 	 *         {@link Optional#empty()} if it has not been set
@@ -480,7 +480,7 @@ public abstract class AbstractRDFParser<T extends AbstractRDFParser<T>> implemen
 	 * @param path
 	 *            Path which extension should be checked
 	 * @return The {@link RDFSyntax} which has a matching
-	 *         {@link RDFSyntax#fileExtension}, otherwise
+	 *         {@link RDFSyntax#getfileExtension()}, otherwise
 	 *         {@link Optional#empty()}.
 	 */
 	protected static Optional<RDFSyntax> guessRDFSyntax(final Path path) {
