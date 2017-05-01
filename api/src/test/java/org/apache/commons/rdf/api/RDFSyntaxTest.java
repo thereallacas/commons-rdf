@@ -142,5 +142,37 @@ public class RDFSyntaxTest {
             assertEquals(s, RDFSyntax.byName(s.getname()).get());
         }
     }
-    
+
+    @Test
+    public void gettitle() throws Exception {
+        assertEquals("JSON-LD 1.0", RDFSyntax.JSONLD.gettitle());
+        assertEquals("RDF 1.1 N-Quads", RDFSyntax.NQUADS.gettitle());
+        assertEquals("RDF 1.1 N-Triples", RDFSyntax.NTRIPLES.gettitle());
+        assertEquals("HTML+RDFa 1.1", RDFSyntax.RDFA.gettitle());
+        assertEquals("RDF 1.1 XML Syntax", RDFSyntax.RDFXML.gettitle());
+        assertEquals("RDF 1.1 TriG", RDFSyntax.TRIG.gettitle());
+        assertEquals("RDF 1.1 Turtle", RDFSyntax.TURTLE.gettitle());
+    }
+
+    @Test
+    public void getiri() throws Exception {
+        assertEquals("<http://www.w3.org/ns/formats/JSON-LD>", RDFSyntax.JSONLD.getiri().toString());
+        assertEquals("<http://www.w3.org/ns/formats/N-Quads>", RDFSyntax.NQUADS.getiri().toString());
+        assertEquals("<http://www.w3.org/ns/formats/N-Triples>", RDFSyntax.NTRIPLES.getiri().toString());
+        assertEquals("<http://www.w3.org/ns/formats/RDFa>", RDFSyntax.RDFA.getiri().toString());
+        assertEquals("<http://www.w3.org/ns/formats/RDF_XML>", RDFSyntax.RDFXML.getiri().toString());
+        assertEquals("<http://www.w3.org/ns/formats/TriG>", RDFSyntax.TRIG.getiri().toString());
+        assertEquals("<http://www.w3.org/ns/formats/Turtle>", RDFSyntax.TURTLE.getiri().toString());
+    }
+
+    @Test
+    public void supportsDataset() throws Exception {
+        assertEquals(true, RDFSyntax.JSONLD.supportsDataset());
+        assertEquals(true, RDFSyntax.NQUADS.supportsDataset());
+        assertEquals(false, RDFSyntax.NTRIPLES.supportsDataset());
+        assertEquals(false, RDFSyntax.RDFA.supportsDataset());
+        assertEquals(false, RDFSyntax.RDFXML.supportsDataset());
+        assertEquals(true, RDFSyntax.TRIG.supportsDataset());
+        assertEquals(false, RDFSyntax.TURTLE.supportsDataset());
+    }
 }
