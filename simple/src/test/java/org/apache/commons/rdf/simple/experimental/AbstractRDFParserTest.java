@@ -41,10 +41,7 @@ import org.apache.commons.rdf.experimental.RDFParser;
 import org.apache.commons.rdf.simple.DummyRDFParserBuilder;
 import org.apache.commons.rdf.simple.SimpleRDF;
 import org.apache.commons.rdf.simple.Types;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.rules.ExpectedException;
 
 public class AbstractRDFParserTest {
@@ -109,6 +106,9 @@ public class AbstractRDFParserTest {
 
     @Test
     public void parseFile() throws Exception {
+        // Assuming the test is not run on Mac
+        Assume.assumeTrue(!System.getProperty("os.name").toLowerCase().contains("mac"));
+
         final Graph g = factory.createGraph();
         final RDFParser parser = dummyParser.source(testNt).target(g);
         parser.parse().get(5, TimeUnit.SECONDS);
@@ -154,6 +154,9 @@ public class AbstractRDFParserTest {
 
     @Test
     public void parseFileContentType() throws Exception {
+        // Assuming the test is not run on Mac
+        Assume.assumeTrue(!System.getProperty("os.name").toLowerCase().contains("mac"));
+
         final Graph g = factory.createGraph();
         final RDFParser parser = dummyParser.source(testNt).contentType(RDFSyntax.NTRIPLES).target(g);
         parser.parse().get(5, TimeUnit.SECONDS);
