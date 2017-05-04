@@ -5,9 +5,15 @@ import static org.junit.Assert.*;
 import java.io.IOException;
 
 import org.apache.commons.rdf.api.RDFSyntax;
+import org.apache.commons.rdf.api.Triple;
 import org.apache.commons.rdf.rdf4j.experimental.RDF4JParser;
 import org.apache.commons.rdf.simple.IRIImpl;
 import org.junit.Test;
+import org.eclipse.rdf4j.model.Statement;
+import org.eclipse.rdf4j.model.impl.SimpleIRI;
+import org.eclipse.rdf4j.model.impl.SimpleLiteral;
+import org.eclipse.rdf4j.model.impl.SimpleStatement;
+import org.eclipse.rdf4j.model.*;
 
 public class RDF4JParserTest {
 
