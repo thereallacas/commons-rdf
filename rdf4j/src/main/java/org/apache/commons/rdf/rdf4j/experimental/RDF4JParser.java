@@ -101,7 +101,7 @@ public class RDF4JParser extends AbstractRDFParser<RDF4JParser> {
             model.setNamespace(prefix, uri);
         }
     }
-
+    
     private RDF4J rdf4jTermFactory;
     private ParserConfig parserConfig = new ParserConfig();
 
